@@ -6,7 +6,7 @@ using std::string;
 using std::vector;
 using std::map;
 
-const vector< Color_t >     kColors         = { kRed, kBlue, kGreen, kYellow, kPink+10, kViolet, kMagenta+4 };
+const vector< Color_t >     kColors         = { kBlue, kRed, kGreen, kYellow, kPink+10, kViolet, kMagenta+4 };
 const map< string, string > kTitles         = { { "nfn", "Final-State Neutrons" }, { "Q2", "Momentum Transfer" } };
 const map< string, string > kXaxisTitles    = { { "nfn", "Neutron Multiplicity" }, { "Q2", "Momentum Transfer [GeV^2]" } };
 const map< string, string > kYaxisTitles    = { { "nfn", "Events" }, { "Q2", "Counts/GeV^2" } };
@@ -43,7 +43,7 @@ void gstHist( vector< string > t_files, string t_branch, string t_target, string
             return 1;
         }
 
-    if( !kPdgCodes.count( t_target ) ) cerr << "Invalid t_target. Ex Ar40 | O16" << endl;
+    if( !kPdgCodes.count( t_target ) && t_target != "" ) cerr << "Invalid t_target. Ex Ar40 | O16" << endl;
 
     if( makeHist( t_files, t_branch, t_target, t_options ) != 0 ) return 1;
 
@@ -94,7 +94,7 @@ int makeHist( const vector< string >& t_files, const string& t_branch, const str
 
         for( Int_t j = 0; j < size; j++ ) {
             tree->GetEntry( j );
-            if( t_target != 0 && cur_tgt == kPdgCodes.at( t_target ) ) {
+            if( t_target == "" || cur_tgt == kPdgCodes.at( t_target ) ) {
                      if( type == "int" )    branches[ i ].push_back( cur_int    );
                 else if( type == "double" ) branches[ i ].push_back( cur_double );
                 else                        branches[ i ].push_back( cur_double );
@@ -121,7 +121,7 @@ int makeHist( const vector< string >& t_files, const string& t_branch, const str
         cout << "Making histogram for file: `" << t_files[ i ] << "`, branch: `" << t_branch << "`." << endl;
 
         string title = kTitles.at( t_branch );
-        if( t_target != 0 ) title += " (Events in " + t_target + ")";
+        if( t_target != "" ) title += " (Events in " + t_target + ")";
     
         if( type == "int" )
             hists[ i ] = new TH1F( t_files[ i ].c_str(), title.c_str(), max, 0, max );
@@ -134,11 +134,11 @@ int makeHist( const vector< string >& t_files, const string& t_branch, const str
             hists[ i ]->Fill( branches[ i ][ j ] );
 
         if( oFill ) { 
-            hists[ i ]->SetFillColorAlpha( kColors[ i ], 0.2 );
-            hists[ i ]->SetLineColorAlpha( kColors[ i ], 0.8 );
+            hists[ i ]->SetFillColorAlpha( kColors[ t_files.size() - 1 - i ], 0.2 );
+            hists[ i ]->SetLineColorAlpha( kColors[ t_files.size() - 1 - i ], 0.8 );
             hists[ i ]->SetLineWidth     ( 3 );
         } else {
-            hists[ i ]->SetLineColorAlpha( kColors[ i ], 0.95 );
+            hists[ i ]->SetLineColorAlpha( kColors[ t_files.size() - 1 - i ], 0.8 );
             hists[ i ]->SetLineWidth     ( 4 );
         }
         if( oPercent ) {
