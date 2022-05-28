@@ -1,0 +1,19 @@
+
+Argon gas at atm
+
+
+
+Processing ../../Scripts/getTgt.C("4")...
+[-]
+ |---o code: 1000010010 [   H1] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000060120 [  C12] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000070140 [  N14] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000080160 [  O16] -----> number-of-initial-interactions = 9225 (92.25%)
+ |---o code: 1000110230 [ Na23] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000120240 [ Mg24] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000130270 [ Al27] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000140280 [ Si28] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000180400 [ Ar40] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000190390 [  K39] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000200400 [ Ca40] -----> number-of-initial-interactions = 0    (0%)
+ |---o code: 1000260560 [ Fe56] -----> number-of-initial-interactions = 80   (0.8%)

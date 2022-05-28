@@ -41,18 +41,19 @@ void getTgt( std::string nRun )
     for( Int_t i = 0; i < size; i++ ) {
         tree->GetEntry( i );
 
-        if( tgt_cur == 1000010010 ) ++n1000010010;
-        if( tgt_cur == 1000060120 ) ++n1000060120;
-        if( tgt_cur == 1000070140 ) ++n1000070140;
-        if( tgt_cur == 1000080160 ) ++n1000080160;
-        if( tgt_cur == 1000110230 ) ++n1000110230;
-        if( tgt_cur == 1000120240 ) ++n1000120240;
-        if( tgt_cur == 1000130270 ) ++n1000130270;
-        if( tgt_cur == 1000140280 ) ++n1000140280;
-        if( tgt_cur == 1000180400 ) ++n1000180400;
-        if( tgt_cur == 1000190390 ) ++n1000190390;
-        if( tgt_cur == 1000200400 ) ++n1000200400;
-        if( tgt_cur == 1000260560 ) ++n1000260560;
+             if( tgt_cur == 1000010010 ) ++n1000010010;
+        else if( tgt_cur == 1000060120 ) ++n1000060120;
+        else if( tgt_cur == 1000070140 ) ++n1000070140;
+        else if( tgt_cur == 1000080160 ) ++n1000080160;
+        else if( tgt_cur == 1000110230 ) ++n1000110230;
+        else if( tgt_cur == 1000120240 ) ++n1000120240;
+        else if( tgt_cur == 1000130270 ) ++n1000130270;
+        else if( tgt_cur == 1000140280 ) ++n1000140280;
+        else if( tgt_cur == 1000180400 ) ++n1000180400;
+        else if( tgt_cur == 1000190390 ) ++n1000190390;
+        else if( tgt_cur == 1000200400 ) ++n1000200400;
+        else if( tgt_cur == 1000260560 ) ++n1000260560;
+        else cout << "Unknown tgt: " << tgt_cur << endl;
     }
 
     int max = 0;
