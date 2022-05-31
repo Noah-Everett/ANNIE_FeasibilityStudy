@@ -37,6 +37,7 @@ void getTgt( std::string nRun )
     int n1000190390 = 0;
     int n1000200400 = 0;
     int n1000260560 = 0;
+    int n2212       = 0;
 
     for( Int_t i = 0; i < size; i++ ) {
         tree->GetEntry( i );
@@ -53,6 +54,7 @@ void getTgt( std::string nRun )
         else if( tgt_cur == 1000190390 ) ++n1000190390;
         else if( tgt_cur == 1000200400 ) ++n1000200400;
         else if( tgt_cur == 1000260560 ) ++n1000260560;
+        else if( tgt_cur == 2212       ) ++n2212      ;
         else cout << "Unknown tgt: " << tgt_cur << endl;
     }
 
@@ -69,6 +71,7 @@ void getTgt( std::string nRun )
     if( max < n1000190390 ) max = n1000190390;
     if( max < n1000200400 ) max = n1000200400;
     if( max < n1000260560 ) max = n1000260560;
+    if( max < n2212       ) max = n2212      ;
 
     cout << "[-]" << endl
          << " |---o code: 1000010010 [   H1] -----> number-of-initial-interactions = " << n1000010010 << std::setw( nDigits( max ) + 2 - nDigits( n1000010010 ) ) << "(" << n1000010010 / double( size ) * 100 << "%)" << endl
@@ -82,5 +85,6 @@ void getTgt( std::string nRun )
          << " |---o code: 1000180400 [ Ar40] -----> number-of-initial-interactions = " << n1000180400 << std::setw( nDigits( max ) + 2 - nDigits( n1000180400 ) ) << "(" << n1000180400 / double( size ) * 100 << "%)" << endl
          << " |---o code: 1000190390 [  K39] -----> number-of-initial-interactions = " << n1000190390 << std::setw( nDigits( max ) + 2 - nDigits( n1000190390 ) ) << "(" << n1000190390 / double( size ) * 100 << "%)" << endl
          << " |---o code: 1000200400 [ Ca40] -----> number-of-initial-interactions = " << n1000200400 << std::setw( nDigits( max ) + 2 - nDigits( n1000200400 ) ) << "(" << n1000200400 / double( size ) * 100 << "%)" << endl
-         << " |---o code: 1000260560 [ Fe56] -----> number-of-initial-interactions = " << n1000260560 << std::setw( nDigits( max ) + 2 - nDigits( n1000260560 ) ) << "(" << n1000260560 / double( size ) * 100 << "%)" << endl;
+         << " |---o code: 1000260560 [ Fe56] -----> number-of-initial-interactions = " << n1000260560 << std::setw( nDigits( max ) + 2 - nDigits( n1000260560 ) ) << "(" << n1000260560 / double( size ) * 100 << "%)" << endl
+         << " |---o code: 2212       [    P] -----> number-of-initial-interactions = " << n2212       << std::setw( nDigits( max ) + 2 - nDigits( n2212       ) ) << "(" << n2212       / double( size ) * 100 << "%)" << endl;
 }
