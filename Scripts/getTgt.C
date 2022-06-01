@@ -86,5 +86,5 @@ void getTgt( std::string nRun )
          << " |---o code: 1000190390 [  K39] -----> number-of-initial-interactions = " << n1000190390 << std::setw( nDigits( max ) + 2 - nDigits( n1000190390 ) ) << "(" << n1000190390 / double( size ) * 100 << "%)" << endl
          << " |---o code: 1000200400 [ Ca40] -----> number-of-initial-interactions = " << n1000200400 << std::setw( nDigits( max ) + 2 - nDigits( n1000200400 ) ) << "(" << n1000200400 / double( size ) * 100 << "%)" << endl
          << " |---o code: 1000260560 [ Fe56] -----> number-of-initial-interactions = " << n1000260560 << std::setw( nDigits( max ) + 2 - nDigits( n1000260560 ) ) << "(" << n1000260560 / double( size ) * 100 << "%)" << endl
-         << " |---o code: 2212       [    P] -----> number-of-initial-interactions = " << n2212       << std::setw( nDigits( max ) + 2 - nDigits( n2212       ) ) << "(" << n2212       / double( size ) * 100 << "%)" << endl;
+         << " |---o code: 2212       [    p] -----> number-of-initial-interactions = " << n2212       << std::setw( nDigits( max ) + 2 - nDigits( n2212       ) ) << "(" << n2212       / double( size ) * 100 << "%)" << endl;
 }
