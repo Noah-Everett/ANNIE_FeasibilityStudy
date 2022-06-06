@@ -1,0 +1,18 @@
+
+Processing getTgt.C("*",true,"../../../ANNIE_gpvm/geometry/annie_v02_tube_vacuum/annie_v02_3.gdml")...
+[-]
+ |---o code: 2212       [    p] o----> total-number-of-initial-interactions = 1494  (7.47%)
+ |                              |--> number-of-initial-interactions-in-TWATER_LV = 1494 (100%)
+ |
+ |---o code: 1000080160 [  O16] o----> total-number-of-initial-interactions = 18363 (91.815%)
+ |                              |--> number-of-initial-interactions-in-TWATER_LV = 18363 (100%)
+ |
+ |---o code: 1000160320 [  S32] o----> total-number-of-initial-interactions = 24    (0.12%)
+ |                              |--> number-of-initial-interactions-in-TWATER_LV = 24 (100%)
+ |
+ |---o code: 1000260560 [ Fe56] o----> total-number-of-initial-interactions = 88    (0.44%)
+ |                              |--> number-of-initial-interactions-in-TDEWAR_LV = 88 (100%)
+ |
+ |---o code: 1000641570 [Gd157] o----> total-number-of-initial-interactions = 31    (0.155%)
+ |                              |--> number-of-initial-interactions-in-TWATER_LV = 31 (100%)
+ |

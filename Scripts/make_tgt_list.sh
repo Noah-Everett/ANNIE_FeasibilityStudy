@@ -4,6 +4,7 @@ export LOCATION=""
 export GEOMETRY=""
 export VERBOSITY=""
 export OTHER=""
+export _TARGETS=""
 cp /Users/noaheverett/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/ANNIE/ANNIE_Analysis/Scripts/getTgt.C /opt/homebrew/Cellar/root/6.26.02_1/share/root/macros
 
 for i in "$@"; do
@@ -18,23 +19,27 @@ for i in "$@"; do
   esac
 done
 
-if [ $LOCATION != "" ] && [ -z $GEOMETRY ]; then
+if [ -n "${LOCATION}" ] && [ -z "${GEOMETRY}" ]; then
   echo "To use \`-l\` to get interaction locations, provide a gdml geometry file with \`-g=\`."
   return 1
 fi 
+
+if [ -n "${LOCATION}" ]; then
+  export _TARGETS="_targets"
+fi
 
 if [ $RECURSIVE == true ]; then
   for folder in */; do
     echo cd ${folder}
     cd ${folder}
-      echo root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}$GEOMETRY$VERBOSITY\) | tee tgt.list
-           root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}$GEOMETRY$VERBOSITY\) | tee tgt.list
+      echo root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}${GEOMETRY}${VERBOSITY}\) | tee tgt${_TARGETS}.list
+           root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}${GEOMETRY}${VERBOSITY}\) | tee tgt${_TARGETS}.list
     echo cd -
     cd -
   done
 else
-  echo root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}$GEOMETRY$VERBOSITY\) | tee tgt.list
-       root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}$GEOMETRY$VERBOSITY\) | tee tgt.list
+  echo root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}${GEOMETRY}${VERBOSITY}\) | tee tgt${_TARGETS}.list
+       root -l -q getTgt.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\"${LOCATION}${GEOMETRY}${VERBOSITY}\) | tee tgt${_TARGETS}.list
 fi
 
 rm /opt/homebrew/Cellar/root/6.26.02_1/share/root/macros/getTgt.C
