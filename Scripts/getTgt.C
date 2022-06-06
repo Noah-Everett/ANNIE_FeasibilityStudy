@@ -24,7 +24,7 @@ int nDigits( int t_int )
     return count;
 }
 
-void getTgt( std::string nRun, bool locations = true, string geomLocation = "", bool verbose = false ) 
+void getTgt( std::string nRun, bool locations = false, string geomLocation = "", bool verbose = false ) 
 {
     std::string fileName = "gntp." + nRun + ".gst.root";
     
@@ -33,7 +33,9 @@ void getTgt( std::string nRun, bool locations = true, string geomLocation = "", 
     
     const unsigned int size = tree->GetEntries();
     int tgt_cur;
-    TGeoManager* geom = TGeoManager::Import( geomLocation.c_str() );
+    TGeoManager* geom;
+    if( locations )
+        geom = TGeoManager::Import( geomLocation.c_str() );
     TGeoNode*    node;
     TGeoVolume*  vol;
     string location;
@@ -82,14 +84,14 @@ void getTgt( std::string nRun, bool locations = true, string geomLocation = "", 
     int max_sub = 0;
     cout << "[-]" << endl;
     for( const auto& i : materials ) {
-        if( i.second.events != 0 && locations ) {
+        if( i.second.events != 0 ) {
             for( const auto& j : i.second.location )
                 if( j.second > max_sub ) max_sub = j.second;
             cout << " |---o code: " << i.second.pdg << " [" << i.second.name << "] o----> total-number-of-initial-interactions = " << i.second.events << std::setw( nDigits( max ) + 2 - nDigits( i.second.events ) ) << "(" << i.second.events / double( size ) * 100 << "%)" << endl;
             for( const auto& j : i.second.location )
                 if( j.second != 0 )
                     cout << " |                              |--> number-of-initial-interactions-in-" << j.first <<  " = " << j.second << std::setw( nDigits( max_sub ) + 2 - nDigits( j.second ) ) << " (" << j.second / double( i.second.events ) * 100 << "%)" << endl;
-            cout << " |" << endl;
+            if( locations ) cout << " |" << endl;
         }
         max_sub = 0;
     }
