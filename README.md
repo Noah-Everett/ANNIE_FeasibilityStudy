@@ -7,4 +7,4 @@ Im sure there are better convensions I could have used but this was basically th
 
 ## Information on Scripts
 
-Usage statements for scripts in [`Scripts/`](https://github.com/Noah-Everett/ANNIE_Analysis/tree/main/Scripts) can be found in [`$B/README.md`](https://github.com/Noah-Everett/ANNIE_gpvm/tree/main/bin#readme)
+Usage statements for scripts in [`Scripts/`](https://github.com/Noah-Everett/ANNIE_Analysis/tree/main/Scripts) can be found in [`Scripts/README.md`](https://github.com/Noah-Everett/ANNIE_gpvm/tree/main/bin#readme)
