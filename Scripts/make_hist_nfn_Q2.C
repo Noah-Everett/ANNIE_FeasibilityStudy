@@ -3,7 +3,7 @@ using std::vector;
 
 void make_hist_nfn_Q2( string t_fileName, string t_target )
 {   
-    TCanvas* canvas = new TCanvas( "canvas", "Final-State Neutrons vs Momentum Transfer" );
+    TCanvas* canvas = new TCanvas();
     TFile  * file   = TFile::Open( t_fileName.c_str() );
     TTree  * tree   = ( TTree* )file->Get( "gst;1" );
     
@@ -46,7 +46,7 @@ void make_hist_nfn_Q2( string t_fileName, string t_target )
 
     TH2F* hist = new TH2F( "Events in Argon", 
                            "Final-State Neutrons vs Momentum Transfer;Momentum Transfer [GeV^2];Neutron Multiplicity",
-                           ( ceil( max_Q2 ) ) * 7, 0, ceil( max_Q2 ),
+                           ( ceil( max_Q2 ) ) / 0.025, 0, ceil( max_Q2 ),
                            max_nfn, 0, max_nfn );
     for( int i = 0; i < nfn.size(); i++ )
         hist->Fill( Q2[ i ], nfn[ i ] );
