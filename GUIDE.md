@@ -20,7 +20,10 @@ $B/make_geoms_1D.sh --outDir=</pnfs/.../path/to/output> --material=argon --shape
 ```
 Note, we will use the 5th file (`annie_v02_4.gdml`) as it has the largest container volume. For more information on each geometry, consult `make_geoms_1D.legend`.
 
-PS: I know this script has more than 1 dimension of freedom; however, this refering to one spacial demension of freedom. While both radius and position change between geometries, they are independent parameters. There is an outdated `make_geoms_4D.sh` in `$B/depreciated` which allows for controle of x, y, z, and radius. Is there a better naming convension, yes.
+PS: I know this script has more than free variable (1D); however, this is referring to one spacial demension of freedom. 
+While both radius and position change between geometries, they are independent parameters. 
+There is an outdated `make_geoms_4D.sh` in `$B/depreciated` which allows for control of x, y, z, and radius (4D). 
+Is there a better naming convention? Yes. : )
  
 ## **GENIE Generator**
 
@@ -28,7 +31,7 @@ PS: I know this script has more than 1 dimension of freedom; however, this refer
 ```
 nohup $B/run_genie.sh -r=1 -n=0 -g=</path/to/geometries>/annie_v02_4.gdml -t=EXP_HALL_LV -f=* -m=+</path/to/geometries>/annie_v02_4.maxpl.xml -S=30000 --message-thresholds=$C/Messenger_warn.xml -o=</path/to/GENIE/output/dir> | tee </path/to/output/file.log or /dev/null if you dont want the file>
 ```
-Uppon completion, feel free to delete all resulting files that aren't `annie_v02_4.maxpl.xml`.
+Upon completion, feel free to delete all resulting files that aren't `annie_v02_4.maxpl.xml`.
 
 ### **Generate Events**
 ```
