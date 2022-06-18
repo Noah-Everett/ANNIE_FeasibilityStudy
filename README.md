@@ -1,10 +1,8 @@
 # **ANNIE_Analysis**
  
 ## Directory Naming Convention
-`<version of ANNIE geometry>_<top volume>_<number of identical runs>_<events per run>_<other run specific information>/`
-
-Im sure there are better convensions I could have used but this was basically the first think I thought of. I'll probably change it later.
+`<version of ANNIE geometry>_<top volume>_<number of identical runs>_<events per run>[_<other run specific information>]/`
 
 ## Information on Scripts
 
-Usage statements for scripts in [`Scripts/`](https://github.com/Noah-Everett/ANNIE_Analysis/tree/main/Scripts) can be found in [`Scripts/README.md`](https://github.com/Noah-Everett/ANNIE_Analysis/tree/main/Scripts#readme)
+Usage statements for scripts in [`Scripts/`](https://github.com/Noah-Everett/ANNIE_Analysis/tree/main/Scripts) can be found in [`Scripts/README.md`](https://github.com/Noah-Everett/ANNIE_Analysis/tree/main/Scripts#readme).
