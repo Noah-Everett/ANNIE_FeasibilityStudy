@@ -47,3 +47,5 @@ nohup $B/run_g4dirt.sh -r=* -i=</path/to/genie/files/dir> -n=1000 -g=</path/to/>
 ```
 $B/run_wcsim_grid.sh -r=0 -p=</path/to/genie/and/annie_dirt_flux/files> -d=1000 -w=500 -g=</path/to/>annie_v02_4.gdml -o=</path/to/output/dir> -N=600
 ```
+
+I highly recommend reviewing the `WCSim.mac` file ceated by this script. I changed almost nothing from the default `WCSim.mac`. I do not know what a lot of the settings do.
