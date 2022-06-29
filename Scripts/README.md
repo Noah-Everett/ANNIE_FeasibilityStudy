@@ -1,5 +1,14 @@
 # Scripts Usage
 
+## Table of Contents
+- [make_combinedGstTrees.C](#make_combinedGstTreesC)
+- [make_combinedGstTrees.sh](#make_combinedGstTreessh)
+- [make_hist_nfn_Q2.C](#make_hist_nfn_Q2C)
+- [make_hist.C](#make_histC)
+- [make_tgtList.C](#make_tgtListC)
+- [make_tgtList.sh](#make_tgtListsh)
+- [open_canvas.C](#open_canvasC)
+
 ## gstHist.C
 ### From Terminal
 
