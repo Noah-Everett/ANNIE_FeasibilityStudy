@@ -9,7 +9,7 @@
 - [make_tgtList.sh](#make_tgtListsh)
 - [open_canvas.C](#open_canvasC)
 
-## gstHist.C
+## make_hist.C
 ### From Terminal
 
 `$ root -l </path/to>/Scripts/gstHist.C\(\{\"<path/to/>gntp.<#>.gst.root\"\, ... ,\"<path/to/>/gntp.<#>.gst.root\"},\"<branch name>\",\"<target name>\",\"<options>\"\)`
