@@ -29,7 +29,7 @@ Is there a better naming convention? Yes. : )
 
 ### **Make `.maxpl.xml` Files**
 ```
-nohup $B/run_genie.sh -r=1 -n=0 -g=</path/to/geometries>/annie_v02_4.gdml -t=EXP_HALL_LV -f=* -m=+</path/to/geometries>/annie_v02_4.maxpl.xml -S=30000 --message-thresholds=$C/Messenger_warn.xml -o=</path/to/GENIE/output/dir> | tee </path/to/output/file.log or /dev/null if you dont want the file>
+nohup $B/run_genie.sh -r=1 -n=1 -g=</path/to/geometries>/annie_v02_4.gdml -t=EXP_HALL_LV -f=* -m=+</path/to/geometries>/annie_v02_4.maxpl.xml -S=30000 --message-thresholds=$C/Messenger_warn.xml -o=</path/to/GENIE/output/dir> | tee </path/to/output/file.log or /dev/null if you dont want the file>
 ```
 Upon completion, feel free to delete all resulting files that aren't `annie_v02_4.maxpl.xml`.
 
