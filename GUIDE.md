@@ -35,7 +35,7 @@ Upon completion, feel free to delete all resulting files that aren't `annie_v02_
 
 ### **Generate Events**
 ```
-$B/run_genie_grid.sh -r=0 -n=1000 -g=</path/to/>annie_v02_4.gdml -t=TWATER_LV -f=* -m=</path/to/>annie_v02_4.maxpl.xml --message-thresholds=$C/Messenger_warn.xml -N=300
+$B/run_genie_grid.sh -r=0 -n=1000 -g=</path/to/>annie_v02_4.gdml -t=TWATER_LV -f=* -m=</path/to/>annie_v02_4.maxpl.xml --message-thresholds=$C/Messenger_warn.xml -N=300 -o=</path/to/output/directory>
 ```
 
 ## **g4annie_dirt_flux**
