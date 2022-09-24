@@ -1,4 +1,4 @@
-# **ANNIE_Analysis**
+# **ANNIE_FeasibilityStudy**
  
 ## Directory Naming Convention
 `<version of ANNIE geometry>_<top volume>_<number of identical runs>_<events per run>[_<other run specific information>]/`
