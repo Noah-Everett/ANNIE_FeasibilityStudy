@@ -1,8 +1,0 @@
-
-Processing getTgt.C("*")...
-[-]
- |---o code: 2212       [    p] o----> total-number-of-initial-interactions = 1562  (7.81%)
- |---o code: 1000080160 [  O16] o----> total-number-of-initial-interactions = 18345 (91.725%)
- |---o code: 1000160320 [  S32] o----> total-number-of-initial-interactions = 30    (0.15%)
- |---o code: 1000260560 [ Fe56] o----> total-number-of-initial-interactions = 27    (0.135%)
- |---o code: 1000641570 [Gd157] o----> total-number-of-initial-interactions = 36    (0.18%)

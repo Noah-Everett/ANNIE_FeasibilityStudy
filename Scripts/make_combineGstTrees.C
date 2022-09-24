@@ -1,7 +1,7 @@
 using std::vector;
 using std::string;
 
-void combineTrees( string nFile_out, vector< string > nFiles ) 
+void make_combineGstTrees( string nFile_out, vector< string > nFiles ) 
 {
     vector< string > fileNames;
     for( int i = 0; i < nFiles.size(); i++ )

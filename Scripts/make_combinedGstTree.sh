@@ -1,7 +1,7 @@
 main() {
 export RECURSIVE=false
 export OTHER=""
-cp /Users/noaheverett/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/ANNIE/ANNIE_Analysis/Scripts/combineTrees.C /opt/homebrew/Cellar/root/6.26.02_1/share/root/macros
+cp /Users/noaheverett/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/ANNIE/ANNIE_Analysis/scripts/make_combinedGstTree.C /opt/homebrew/Cellar/root/6.26.02_1/share/root/macros
 
 for i in "$@"; do
   case $i in
@@ -18,8 +18,8 @@ if [ $RECURSIVE == true ]; then
     cd ${folder}
     for file in gntp.$(echo ${OTHER} | tr -d '\\\ ').ghep.root; do
       if [ -f "$file" ]; then
-        echo root -l -q combineTrees.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
-             root -l -q combineTrees.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
+        echo root -l -q make_combinedGstTree.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
+             root -l -q make_combinedGstTree.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
       fi
     done
     echo cd -
@@ -28,20 +28,20 @@ if [ $RECURSIVE == true ]; then
 else
   for file in gntp.$(echo ${OTHER} | tr -d '\\\ ').gst.root; do
     if [ -f "$file" ]; then
-      echo root -l -q combineTrees.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
-           root -l -q combineTrees.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
+      echo root -l -q make_combinedGstTree.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
+           root -l -q make_combinedGstTree.C\(\"$(echo ${OTHER} | tr -d '\\\ ')\",{\"$(echo ${OTHER} | tr -d '\\\ ')\"}\)
     fi
   done
 fi
 
-rm /opt/homebrew/Cellar/root/6.26.02_1/share/root/macros/combineTrees.C
+rm /opt/homebrew/Cellar/root/6.26.02_1/share/root/macros/make_combinedGstTree.C
 }
 
 usage() {
 cat >&2 <<EOF
-make_combined_gst.sh -r                 (recursive (directories))
-                     -h|--help          (display the usage statement (this output))
-                     <ghep file number> (number (numbers with '*') of the ghep file to convert to gst)
+make_combinedGstTree.sh -r                 (recursive (directories))
+                        -h|--help          (display the usage statement (this output))
+                        <ghep file number> (number (numbers with '*') of the ghep file to convert to gst)
 If your usage of this command did not work, use "source $S/make_genie_gst.sh "##\*""
 EOF
 }
