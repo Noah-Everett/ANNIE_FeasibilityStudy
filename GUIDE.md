@@ -8,6 +8,7 @@
     - [Generate Events](#generate-events)
 - [g4annie_dirt_flux](#g4annie_dirt_flux)
 - [WCsim](#wcsim)
+- [Actual Commands Used](actual-commands-used)
 
 ## **setup**
 ```
@@ -49,3 +50,10 @@ $B/run_wcsim_grid.sh -r=0 -p=</path/to/genie/and/annie_dirt_flux/files> -d=1000 
 ```
 
 I highly recommend reviewing the `WCSim.mac` file ceated by this script. I changed almost nothing from the default `WCSim.mac`. I do not know what a lot of the settings do.
+
+## **Actual Commands Used**
+
+To generate ANNIE Phase II POT data:
+```
+$B/run_genie_grid.sh -r=0 -e=1E18 -g=$G/other/annie_v04.gdml -t=TWATER_LV -f=* -m=$G/other/annie_v04.maxpl.xml --message-thresholds=$C/Messenger_warn.xml -N=500 -o=$PNE/runs -T=24
+```
