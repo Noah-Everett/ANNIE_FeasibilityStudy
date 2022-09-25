@@ -1,13 +1,13 @@
 using std::vector;
 using std::string;
 
-void make_combineGstTrees( string nFile_out, vector< string > nFiles ) 
+void make_combineGstTrees( string fileName_out, vector< string > nFiles ) 
 {
     vector< string > fileNames;
     for( int i = 0; i < nFiles.size(); i++ )
         fileNames.push_back( "gntp." + nFiles[ i ] + ".gst.root" );
     
-    string fileName_out = "gntp." + nFile_out + ".gst.root";
+    // string fileName_out = "gntp." + nFile_out + ".gst.root";
     TFile* file = TFile::Open( fileName_out.c_str(), "RECREATE" );
     TChain* chain = new TChain( "gst;1" );
     
